@@ -25,9 +25,12 @@ const Time = () => {
   }
   
   let h = Math.floor(time / 3600000);
-  let min = Math.floor((time - h * 3600000) / 60000);
+  /*let min = Math.floor((time - h * 3600000) / 60000);
   let sec = Math.floor((time - h * 3600000 - min * 60000) / 1000);
-  let msec = (time - h * 3600000 - min * 60000 - sec * 1000);
+  let msec = (time - h * 3600000 - min * 60000 - sec * 1000);*/
+  let min = Math.floor((time / 60000) % 60)
+  let sec = Math.floor((time / 1000) % 60)
+  let msec = Math.floor(time % 1000)
 
   let hh;
   let mm;
